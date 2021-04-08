@@ -28,15 +28,35 @@ public class DataHelper {
     }
 
     @Value
-    public static class CardInfo{
-        private String card1;
-        private String card2;
+    public static class FirstCardInfo{
+        private String firstCardInfo;
+
 
     }
 
-    public static CardInfo getCardInfofor () {
-        return new CardInfo("5559 0000 0000 0001","5559 0000 0000 0002");
+    public static FirstCardInfo getFirstCardInfo () {
+        return new FirstCardInfo("5559 0000 0000 0001");
     }
+    @Value
+    public static class SecondCardInfo{
+        private String secondCardInfo;
+
+
+    }
+
+    public static SecondCardInfo getSecondCardInfo () {
+        return new SecondCardInfo("5559 0000 0000 0002");
+    }
+    @Value
+    public static class TransferAmmountInfo{
+        private String transferAmmount;
+
+    }
+
+    public static TransferAmmountInfo getTransferAmmountInfo () {
+        return  new TransferAmmountInfo("500");
+    }
+
 
 }
 
