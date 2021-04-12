@@ -50,11 +50,13 @@ public class DataHelper {
     @Value
     public static class TransferAmmountInfo{
         private String transferAmmount;
+        private String transferAmmountUnderLimit;
+        private String transferFloatAmmount;
 
     }
 
     public static TransferAmmountInfo getTransferAmmountInfo () {
-        return  new TransferAmmountInfo("500");
+        return  new TransferAmmountInfo("500","20000","25.55");
     }
 
 

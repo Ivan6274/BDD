@@ -19,10 +19,46 @@ public class MoneyTransferPage {
         fromField.setValue(secondCardInfo.getSecondCardInfo());
         transferButton.click();
         return new DashboardPage();
+
     }
+
+    public DashboardPage TransferUnderLimit(DataHelper.SecondCardInfo secondCardInfo, DataHelper.TransferAmmountInfo transferAmmountInfo) {
+        amountField.setValue(transferAmmountInfo.getTransferAmmountUnderLimit());
+        fromField.setValue(secondCardInfo.getSecondCardInfo());
+        transferButton.click();
+        return new DashboardPage();
+    }
+
+    public DashboardPage TransferFloatAmount(DataHelper.SecondCardInfo secondCardInfo, DataHelper.TransferAmmountInfo transferAmmountInfo){
+        amountField.setValue(transferAmmountInfo.getTransferFloatAmmount());
+        fromField.setValue(secondCardInfo.getSecondCardInfo());
+        transferButton.click();
+        return new DashboardPage();
+
+    }
+
+
     public DashboardPage validReturnTransfer(DataHelper.FirstCardInfo firstCardInfo, DataHelper.TransferAmmountInfo transferAmmountInfo){
         amountField.sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME), Keys.BACK_SPACE);
         amountField.setValue(transferAmmountInfo.getTransferAmmount());
+        fromField.sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME), Keys.BACK_SPACE);
+        fromField.setValue(firstCardInfo.getFirstCardInfo());
+        transferButton.click();
+        return new DashboardPage();
+    }
+
+    public DashboardPage returnTransferUnderLimit(DataHelper.FirstCardInfo firstCardInfo, DataHelper.TransferAmmountInfo transferAmmountInfo){
+        amountField.sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME), Keys.BACK_SPACE);
+        amountField.setValue(transferAmmountInfo.getTransferAmmountUnderLimit());
+        fromField.sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME), Keys.BACK_SPACE);
+        fromField.setValue(firstCardInfo.getFirstCardInfo());
+        transferButton.click();
+        return new DashboardPage();
+    }
+
+    public DashboardPage returnTransferFloatAmmount(DataHelper.FirstCardInfo firstCardInfo, DataHelper.TransferAmmountInfo transferAmmountInfo){
+        amountField.sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME), Keys.BACK_SPACE);
+        amountField.setValue(transferAmmountInfo.getTransferFloatAmmount());
         fromField.sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME), Keys.BACK_SPACE);
         fromField.setValue(firstCardInfo.getFirstCardInfo());
         transferButton.click();
